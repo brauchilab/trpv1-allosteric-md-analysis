@@ -1,0 +1,64 @@
+# ==========================================================
+# TRPV1 STRUCTURAL DYNAMICS PIPELINE - CONFIGURATION FILE
+# ==========================================================
+#
+# Read by the setup, MD correlation/network and helix scripts
+# and by the parameter-registry blocks of the flow scripts.
+#
+# Format: parameter = value
+# Lines starting with # are comments.
+#
+# IMPORTANT
+# - Edit the directories below to match your machine.
+# - The helix and gate lines at the end are read with a plain
+#   text search: keep them exactly as written (no spaces
+#   around the equal sign in the helix lines).
+# - Do not write parameter names inside comments.
+#
+# ==========================================================
+
+
+# ==========================================================
+# PROJECT DIRECTORIES
+# ==========================================================
+
+project_root = C:/DinamicasMoleculares
+
+# Directory with the NMA analysis outputs (must exist)
+nma_analysis_dir = C:/DinamicasMoleculares/analisis_bio3d_output/2_nma_correlation
+
+# Directory where pipeline outputs are written
+pipeline_output_dir = C:/DinamicasMoleculares/TRPV1_pipeline/output
+
+# Directory for log files
+log_dir = C:/DinamicasMoleculares/TRPV1_pipeline/output/logs
+
+
+# ==========================================================
+# NETWORK PARAMETERS
+# ==========================================================
+
+# Correlation cut-off of the network reported in the manuscript.
+# The network script scans 0.47-0.49 (set inside the script).
+dccm_threshold = 0.49
+
+# CA-CA distance (Angstrom) for the contact mask of the network.
+# The value applied is set inside the network script (12 A).
+contact_cutoff = 12.0
+
+
+# ==========================================================
+# STRUCTURAL REGION DEFINITIONS (TRPV1 helices and pore gate)
+# ==========================================================
+
+gate_residue_range = 671-688
+
+helix_preS1=415-429
+helix_S1=430-453
+helix_S2=469-499
+helix_S3=511-531
+helix_S4=537-558
+helix_Linker=559-576
+helix_S5=579-598
+helix_S6=656-689
+helix_TRPh=691-712
